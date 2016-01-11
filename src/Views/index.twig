@@ -1,0 +1,20 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+    Benutzer anzeigen
+
+
+            <p>{{ firstname }} {{ lastname  }}</p>
+            <p>{{ getStreetAddress }}</p>
+            <p>{{ city }}</p>
+            <p>{{ state }}</p>
+
+
+    {% for phonenumber in phonenumbers %}
+        <p>{{ phonenumber.type }} {{ phonenumber.number }} </p>
+
+        {% endfor %}
+
+
+
+{% endblock %}
