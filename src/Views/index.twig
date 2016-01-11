@@ -1,20 +1,39 @@
 {% extends 'layout.twig' %}
-
 {% block content %}
-    Benutzer anzeigen
-
-
-            <p>{{ firstname }} {{ lastname  }}</p>
-            <p>{{ getStreetAddress }}</p>
-            <p>{{ city }}</p>
-            <p>{{ state }}</p>
-
-
-    {% for phonenumber in phonenumbers %}
-        <p>{{ phonenumber.type }} {{ phonenumber.number }} </p>
-
-        {% endfor %}
-
-
-
+    <div class="page-header">
+        <h1>Benutzer</h1>
+        <p class="lead">Benutzer ausgelesen über JSON.</p>
+    </div>
+    <div class="table-responsive">
+    <table class="table table-striped">
+        <tbody>
+        <tr>
+            <th>Vorname</th>
+            <td>{{ firstname }}</td>
+        </tr>
+        <tr>
+            <th>Nachname</th>
+            <td>{{ lastname  }}</td>
+        </tr>
+        <tr>
+            <th>Strasse</th>
+            <td>{{ getStreetAddress }}</td>
+        </tr>
+        <tr>
+            <th>Stadt</th>
+            <td>{{ city }}</td>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <td>{{ state }}</td>
+        </tr>
+       {% for phonenumber in phonenumbers %}
+        <tr>
+           <th>{{ phonenumber.type }}</th>
+           <td>{{ phonenumber.number }}</td>
+        </tr>
+       {% endfor %}
+        </tbody>
+    </table>
+    </div>
 {% endblock %}

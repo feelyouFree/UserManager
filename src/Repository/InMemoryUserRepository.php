@@ -16,7 +16,7 @@ use UserManager\Model\Phonenumber;
 class InMemoryUserRepository implements IUserRepository
 {
     private $data;
-    private $file = '/UserManager/test.json';
+    private $file = '/Users/pw/PhpstormProjects/UserManager/test.json';
 
     public function __construct()
     {
