@@ -8,6 +8,6 @@
 
 require "../vendor/autoload.php";
 
-$container = require __DIR__ . '/../app/config.php';
+$container = require __DIR__ . '/../app/bootstrap.php';
 $response = $container->get('UserManager\Controller\UserController')->indexAction();
 print $response;
